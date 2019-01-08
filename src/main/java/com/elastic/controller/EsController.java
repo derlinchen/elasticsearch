@@ -65,7 +65,7 @@ public class EsController {
 	@RequestMapping("/getbypage")
 	public void getPageByName(Book book){
 		Pageable pageable = PageRequest.of(0, 2);
-		List<Book> books = esService.getPageByName("三", pageable);
+		List<Book> books = esService.getPageByName(book.getName(), pageable);
 		System.out.println(books.size());
 	}
 	
