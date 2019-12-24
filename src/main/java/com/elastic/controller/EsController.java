@@ -46,9 +46,10 @@ public class EsController {
 	}
 
 	@RequestMapping("/findbypagesort")
-	public void findBySort(){
+	public List<Book> findBySort(){
 		List<Book> books = esService.findByPageSort(0, 10, "id", true, Book.class);
 		System.out.println(books.size());
+		return books;
 	}
 	
 	// endregion Template Methods
